@@ -1,0 +1,7 @@
+.venv/*
+**__pycache__*
+*.lock
+*.csv
+*.xlsx
+*.parquets
+*.ipynb
