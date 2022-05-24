@@ -1,7 +1,7 @@
 from numpy import ndarray as Array
 from enum import Enum, auto
 from dataclasses import dataclass
-from typing import Protocol
+from typing import Protocol, Optional
 
 class StrategyEnum(Enum):
     """
@@ -23,12 +23,15 @@ class DatasetEnum(Enum):
 class CliParams:
     strategy: StrategyEnum
     n_clusters: int
+    n_samples: int
+    noise: float
     dataset: DatasetEnum
+    save_path: str
 
 class ClusteringModel(Protocol):
     labels_: Array
 
-    def fit(self, X: Array, y: Array):
+    def fit(self, X: Array, y: Optional[Array] = None):
         ...
 
 """
