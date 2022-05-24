@@ -6,10 +6,20 @@ authors = ["Juan Lara <julara@unal.edu.co>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">3.8"
+python = ">3.8,<3.10"
+matplotlib = "^3.5.2"
+scikit-learn = "^1.1.1"
+dvc = "^2.10.2"
 
 [tool.poetry.dev-dependencies]
+neovim = "^0.3.1"
+jupytext = "^1.13.8"
+jupyter = "^1.0.0"
+ipython = "^8.3.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+clustergen = "clustergen.cli:main"
